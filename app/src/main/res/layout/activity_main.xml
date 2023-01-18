@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="186dp"
+        android:src="@drawable/ic_photo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/name_input"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:padding="10dp"
+        android:background="@drawable/input_field"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="Name"
+        android:singleLine="true"
+        android:textColorHint="@color/hint_text_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/palindrom_input"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/input_field"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="Palindrom"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:textColorHint="@color/hint_text_color"
+        app:layout_constraintEnd_toEndOf="@+id/name_input"
+        app:layout_constraintStart_toStartOf="@+id/name_input"
+        app:layout_constraintTop_toBottomOf="@+id/name_input" />
+
+    <Button
+        android:id="@+id/checkPalindrom_button"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/button_bg"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Check"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/palindrom_input"
+        app:layout_constraintStart_toStartOf="@+id/palindrom_input"
+        app:layout_constraintTop_toBottomOf="@+id/palindrom_input" />
+
+    <Button
+        android:id="@+id/pageTwo_button"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/button_bg"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="NEXT"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/palindrom_input"
+        app:layout_constraintStart_toStartOf="@+id/palindrom_input"
+        app:layout_constraintTop_toBottomOf="@+id/checkPalindrom_button" />
+</androidx.constraintlayout.widget.ConstraintLayout>
