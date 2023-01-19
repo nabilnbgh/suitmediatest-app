@@ -32,6 +32,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        this.getSharedPreferences("myPrefs", MODE_PRIVATE).edit().clear().commit()
+    }
 
     fun isPalindrome(s: String) : Boolean {
         Log.d("test",s)
