@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.textfield.TextInputEditText
 
@@ -32,10 +33,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        this.getSharedPreferences("myPrefs", MODE_PRIVATE).edit().clear().commit()
-    }
 
     fun isPalindrome(s: String) : Boolean {
         Log.d("test",s)

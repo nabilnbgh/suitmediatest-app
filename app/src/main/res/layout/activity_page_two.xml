@@ -34,15 +34,16 @@
         android:id="@+id/selectedUser_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="228dp"
+        android:maxWidth="310dp"
+        android:layout_marginTop="224dp"
         android:fontFamily="@font/poppins_regular"
         android:text="Selected User Name"
         android:textColor="@color/black"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.652"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/pageOneName_text"
         app:layout_constraintTop_toBottomOf="@+id/pageOneName_text" />
 
     <Button

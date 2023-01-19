@@ -8,12 +8,14 @@ import androidx.appcompat.app.AppCompatActivity
 
 
 class PageTwo : AppCompatActivity() {
+
+    var username = "Selected User Name"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_page_two)
         supportActionBar?.hide()
         var name = ""
-        var username = "Selected User Name"
+
         val pref = this.getSharedPreferences("myPrefs", MODE_PRIVATE)
         if(intent.extras != null){
             name = intent.extras!!.getString("name")!!
@@ -34,7 +36,6 @@ class PageTwo : AppCompatActivity() {
         val pageTreeButton = findViewById<Button>(R.id.chooseUser_button)
         pageTreeButton.setOnClickListener {
             startActivity(Intent(this, PageThree::class.java))
-            this.finish()
         }
 
         val userNameText = findViewById<TextView>(R.id.selectedUser_text)
@@ -43,6 +44,19 @@ class PageTwo : AppCompatActivity() {
 //        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
+    override fun onResume() {
+        super.onResume()
+        val pref = this.getSharedPreferences("myPrefs", MODE_PRIVATE)
+        if(!pref.getString("username", "")?.isEmpty()!!) {
+            username = pref.getString("username", "")!!
+            val userNameText = findViewById<TextView>(R.id.selectedUser_text)
+            userNameText.text = username
+        }
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        this.getSharedPreferences("myPrefs", MODE_PRIVATE).edit().clear().commit()
+    }
 //    override fun onContextItemSelected(item: MenuItem): Boolean {
 //        when (item.itemId) {
 //            android.R.id.home -> {

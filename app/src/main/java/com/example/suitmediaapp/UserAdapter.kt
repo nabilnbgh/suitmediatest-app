@@ -38,7 +38,7 @@ class UserAdapter(val results: ArrayList<UserNameModel>) : RecyclerView.Adapter<
             view.setOnClickListener {
                 val pref = view.context.getSharedPreferences("myPrefs", AppCompatActivity.MODE_PRIVATE)
                 pref.edit().putString("username", fullName.text.toString()).apply()
-                view.context.startActivity(Intent(view.context, PageTwo::class.java))
+//                view.context.startActivity(Intent(view.context, PageTwo::class.java))
                 val viewAct = view.context as Activity
                 viewAct.finish()
             }

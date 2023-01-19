@@ -23,6 +23,8 @@ class PageThree : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_page_three)
 
+        supportActionBar?.hide()
+
         userRV = findViewById(R.id.userProfile_RV)
         val pullToRefresh = findViewById<SwipeRefreshLayout>(R.id.swipeRefreshLayout)
 
@@ -92,6 +94,7 @@ class PageThree : AppCompatActivity() {
 
     private fun refreshData(){
         listUser.clear()
+        counter = 1
         APIService.endpoint.getUsers("1")
             .enqueue(object : Callback<ListUserModel> {
                 override fun onResponse(
